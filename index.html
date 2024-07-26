@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Mandala Studio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  background-color: black;
+    margin: 0;
+    padding: 0;
+}
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold text-center mb-8 text-cyan-400"> Mandala Studio</h1>
+        <div class="bg-gray-800 rounded-xl p-6 mb-8 shadow-lg">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                <div class="tool-btn">
+                    <i class="fas fa-paint-brush"></i>
+                    <input type="color" id="color" value="#00FFFF" class="w-6 h-6 rounded cursor-pointer">
+                </div>
+                <div class="tool-btn">
+                    <i class="fas fa-fill-drip"></i>
+                    <input type="color" id="canvasColor" value="#000000" class="w-6 h-6 rounded cursor-pointer">
+                </div>
+                <div class="tool-btn">
+                    <i class="fas fa-ruler"></i>
+                    <input type="range" id="lineWidth" min="1" max="20" value="2" class="w-24 accent-cyan-500">
+                </div>
+                <select id="gridSize" class="tool-btn">
+                    <option value="25">Grid: 25</option>
+                    <option value="30">Grid: 30</option>
+                    <option value="36">Grid: 36</option>
+                </select>
+                <select id="canvasSize" class="tool-btn">
+                    <option value="600">Canvas: 600x600</option>
+                    <option value="800" selected>Canvas: 800x800</option>
+                    <option value="1000">Canvas: 1000x1000</option>
+                </select>
+                <button id="mirrorModeBtn" class="tool-btn"><i class="fas fa-mirror"></i> Mirror Mode</button>
+                <button id="kaleidoscopeBtn" class="tool-btn"><i class="fas fa-star"></i> Kaleidoscope</button>
+                <button id="rainbowModeBtn" class="tool-btn"><i class="fas fa-rainbow"></i> Rainbow Mode</button>
+                <button id="undoBtn" class="tool-btn"><i class="fas fa-undo"></i> Undo</button>
+                <button id="redoBtn" class="tool-btn"><i class="fas fa-redo"></i> Redo</button>
+                <button id="clearBtn" class="tool-btn"><i class="fas fa-trash"></i> Clear</button>
+                <button id="downloadBtn" class="tool-btn"><i class="fas fa-download"></i> Download</button>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <canvas id="mandalaCanvas" class="rounded-xl shadow-xl border-4 border-cyan-500"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
